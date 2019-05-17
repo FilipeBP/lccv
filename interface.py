@@ -61,7 +61,7 @@ class Janela():
         self.e_planets = Entry(self.root)
         self.t_collision = Label(self.root,text='Quantidade de modelos de colisão:',width=30,anchor=E)
         self.e_collision = Entry(self.root)
-        self.t_integrator = Label(self.root,text="Tipo de integrador (Newton ou Verlet):",width=30,anchor=E)
+        self.t_integrator = Label(self.root,text="Tipo de integrador (Euler ou Verlet):",width=30,anchor=E)
         self.e_integrator = Entry(self.root)
         self.t_time = Label(self.root,text="Parâmetros de tempo",width=30,anchor=W)
         self.t_timedx = Label(self.root,text="Passo do tempo (x):",width=30,anchor=E)

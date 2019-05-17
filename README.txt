@@ -14,7 +14,7 @@ pandas.
 O módulo analise irá calcular, utilizando métodos de integração, as posições, velocidades e acelerações dos planetas ao decorrer do tempo,
 e para finalizar, exportar as posições e velocidades para o mesmo arquivo .xlsx.
 
-Por fim, o método visualizacao tem como função mostrar as posições dos planetas, em relação ao tempo, em 2D, 3D e sua trajetória, com
+Por fim, o módulo visualizacao tem como função mostrar as posições dos planetas, em relação ao tempo, em 2D, 3D e sua trajetória, com
 o vetor da força de cada planeta.
 ---------------------------------
 TUTORIAL:
@@ -22,6 +22,6 @@ Para rodar o projeto, é necessário executar o programa principal, o main.py. Ao 
 opções: 'Novo arquivo' e 'Selecionar arquivo'. Se já existir um arquivo .txt com o modelo padrão, clica em 'Selecionar arquivo', e 
 aparecerá uma janela para selecionar o arquivo, com uma lista de opções no canto inferior direito. Se for necessário criar um arquivo, clica no
 botão 'Novo arquivo', e irá aparecer variás interfaces, uma de cada vez, para a entrada de dados. Porém, para a continuidade do programa
-é OBRIGATÓRIO selecionar um arquivo. Após selecionar, o programa irá calcular com os dados fornecidos, e ao fim, irá aparecer, em sequência,
-um gráfico em 2D, um gráfico em 3D, e uma animação com a trajetória dos planetas e seus vetores.
+é OBRIGATÓRIO selecionar um arquivo. Após selecionar, o programa irá calcular as posições em função do tempo com os dados fornecidos, e ao fim, irá aparecer, em sequência,
+um gráfico 2D, um gráfico 3D, e uma animação com a trajetória dos planetas e seus vetores.
 OBS: Se for necessário mudar a constante G para os dados em uma escala adequada, seu valor poderá ser modificado na linha 19 do módulo análise.

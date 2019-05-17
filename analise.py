@@ -69,8 +69,8 @@ class Integral():
                     f += K*dx
         return f
 
-    def newton(self):
-        """Método para calcular os dados usando o método de Newton"""
+    def euler(self):
+        """Método para calcular os dados usando o método de Euler"""
         for j in range(1,self.n):
             for i in range(self.start,len(self.planets)):
                 #Atualizando a aceleração para cada variável.

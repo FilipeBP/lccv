@@ -19,7 +19,7 @@ def main():
     #Checando se os dados dos planetas não foram calculados.
     if len(arquivo_excel.sheet_names) == 4:
         #Atribuindo os parâmetros em variáveis.
-        integrador = str(parametros.integrator[5:11]).lower()
+        integrador = str(parametros.integrator[5:10]).lower()
         tf = parametros.t_final
         dt = parametros.dt
         passos = parametros.n_impressions
@@ -28,9 +28,9 @@ def main():
         calculo = Integral(planetas,tf,dt)
         calculo.getCollision(parametros.models,parametros.collision_matrix)
 
-        if integrador == 'newton':
-            calculo.newton()
-        elif integrador == 'verlet':
+        if integrador == 'euler':
+            calculo.euler()
+        elif integrador == 'verle':
             calculo.verlet()
         else:
             print('Integrador inválido.')
@@ -46,7 +46,7 @@ def main():
     grafico.getRadius(parametros.radius)
     grafico.plot2d()
     grafico.plot3d()
-    grafico.trajectory(4)
+    grafico.trajectory(8)
 
 if __name__ == '__main__':
     main()
