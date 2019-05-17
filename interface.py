@@ -266,8 +266,8 @@ class Janela():
         #Após adicionar, os conteúdos da Entry widget será apagada.
         self.e_collision_ij.delete(0,END)
 
-        #Checando se todos os elementos foram coletados.
-        if self.k == self.n_planets - 2 and self.l == self.n_planets - 1:
+        #Checando se todos os elementos foram coletados ou se há apenas 2 planetas.
+        if (self.k == self.n_planets - 2 and self.l == self.n_planets - 1) or self.n_planets == 2:
             #Se todos os elementos foram coletados, dataframes para os modelos de colisão e a matriz de colisão.
             df3 = pd.DataFrame(np.array(self.models))
             df3.set_index(df3[0],inplace=True)

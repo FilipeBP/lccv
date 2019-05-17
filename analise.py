@@ -35,6 +35,12 @@ class Integral():
             self.vy[i,0] = list[i].v0y
             self.vz[i,0] = list[i].v0z
 
+        #Checando se o planeta 1 será fixo.
+        if list[0].x0 == 0 and list[0].y0 == 0 and list[0].z0 == 0 and list[0].v0x == 0 and list[0].v0y == 0 and list[0].v0z == 0:
+            self.start = 1
+        else:
+            self.start = 0
+
     def getCollision(self,model,matrix):
         """Método para receber os modelos de colisão e a matriz de colisão."""
         self.model = model
@@ -64,9 +70,9 @@ class Integral():
         return f
 
     def newton(self):
-        """Método para calcular os dados usando o método de Newton, com o primeiro planeta sendo fixo."""
+        """Método para calcular os dados usando o método de Newton"""
         for j in range(1,self.n):
-            for i in range(1,len(self.planets)):
+            for i in range(self.start,len(self.planets)):
                 #Atualizando a aceleração para cada variável.
                 ax = self.F(self.x,i,j)
                 ay = self.F(self.y,i,j)
@@ -82,12 +88,10 @@ class Integral():
                 self.y[i,j] = self.y[i,j-1] + self.dt*self.vy[i,j]
                 self.z[i,j] = self.z[i,j-1] + self.dt*self.vz[i,j]
 
-        return self.x,self.y,self.z,self.vx,self.vy,self.vz
-
     def verlet(self):
-        """Método para calcular os dados usando o método de Verlet, com o primeiro planeta sendo fixo."""
+        """Método para calcular os dados usando o método de Verlet"""
         for j in range(1,self.n):
-            for i in range(1,len(self.planets)):
+            for i in range(self.start,len(self.planets)):
                 #Atualizando a aceleração para cada variável.
                 ax = self.F(self.x,i,j)
                 ay = self.F(self.y,i,j)
@@ -107,8 +111,6 @@ class Integral():
                 self.x[i,j] = self.x[i,j-1] + self.dt*self.vx[i,j]
                 self.y[i,j] = self.y[i,j-1] + self.dt*self.vy[i,j]
                 self.z[i,j] = self.z[i,j-1] + self.dt*self.vz[i,j]
-
-        return self.x,self.y,self.z,self.vx,self.vy,self.vz
 
     def exportToFile(self,file,passo):
         """Método para exportar os dados calculados para o mesmo arquivo de entrada"""
